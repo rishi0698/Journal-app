@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UFC-8" />
-        <meta name="viewpoint" content="width=device-width, initial-scale=1.0"/>
-        <title>My Journal</title>
-        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-    
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Journal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
 
-    <body>
-        <nav>
-            <span class="nav-brand"> My Journal </span>
-            <div class="nav-links">
-                <a href="/">New Entry</a>
-                <a href="/entries">past Entries</a>
-            </div>
-        </nav>
+  <div class="app-shell">
 
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
-    </body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+          <div class="sidebar-brand"> My Journal</div>
+      <nav class="sidebar-nav">
+        <a href="/" class="nav-item">
+          <i data-lucide="pen-line"> </i>
+          <span>New Entry</span>
+        </a>
+        <a href="/entries" class="nav-item">
+          <i data-lucide="book-open"> </i>
+          <span>Past Entries</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+  </div>
+
+<script>lucide.createIcons();</script>
+</body>
 </html>

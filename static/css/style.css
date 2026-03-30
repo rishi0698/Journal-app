@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f0;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+main {
+  width: 80%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Navbar */
+nav {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Date header */
+.entry-date {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Sections */
+.section {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section h2 {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Habits table */
+.habits-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.habits-table th {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  padding-bottom: 8px;
+}
+
+.habits-table th:first-child {
+  text-align: left;
+}
+
+.habits-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 15px;
+}
+
+.habits-table td:not(:first-child) {
+  text-align: center;
+}
+
+/* Tracker rows */
+.tracker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 1rem;
+}
+
+.tracker-row label {
+  font-size: 15px;
+  flex: 1;
+}
+
+.tracker-row input[type="text"] {
+  width: 200px;
+  padding: 6px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+}
+
+.tracker-row input[type="text"]:focus {
+  border-color: #1a1a1a;
+}
+
+/* Reflections */
+.reflection-row {
+  margin-bottom: 1rem;
+}
+
+.reflection-row label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.reflection-row textarea,
+.section > textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+}
+
+.reflection-row textarea:focus,
+.section > textarea:focus {
+  border-color: #1a1a1a;
+}
+
+/* Buttons */
+button[type="button"] {
+  margin-top: 1rem;
+  background: none;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+}
+
+button[type="button"]:hover {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.submit-btn:hover {
+  background: #333;
+}
+
+/* Responsive - tablets and below */
+@media (max-width: 768px) {
+  .tracker-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .tracker-row input[type="text"] {
+    width: 100%;
+  }
+
+  .entry-date {
+    font-size: 20px;
+  }
+}

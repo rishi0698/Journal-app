@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UFC-8" />
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0"/>
+        <title>My Journal</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    
+    </head>
+
+    <body>
+        <nav>
+            <span class="nav-brand"> My Journal </span>
+            <div class="nav-links">
+                <a href="/">New Entry</a>
+                <a href="/entries">past Entries</a>
+            </div>
+        </nav>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </body>
+</html>

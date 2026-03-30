@@ -1,9 +1,113 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Journal</title>
-  </head>
-  <body>
-    <h1>Journal App is working!</h1>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1 class="entry-date">{{ date }}</h1>
+</div>
+
+<form action="/submit" method="POST">
+
+  <!-- Section: Journalling / Notes -->
+  <div class="section">
+    <h2>Journalling / Notes</h2>
+    <textarea name="journal_notes" placeholder="Write your thoughts for today..."></textarea>
+  </div>
+
+  <!-- Section: Habits -->
+  <div class="section">
+    <h2>Habits</h2>
+    <table class="habits-table">
+      <thead>
+        <tr>
+          <th>Habit</th>
+          <th>Yes</th>
+          <th>No</th>
+        </tr>
+      </thead>
+      <tbody id="habits-body">
+        <tr>
+          <td>Drink 3-liters of water</td>
+          <td><input type="radio" name="habit_water" value="yes"></td>
+          <td><input type="radio" name="habit_water" value="no"></td>
+        </tr>
+        <tr>
+          <td>Read 10 pages of a book</td>
+          <td><input type="radio" name="habit_read" value="yes"></td>
+          <td><input type="radio" name="habit_read" value="no"></td>
+        </tr>
+        <tr>
+          <td>Learn Skills (Career focused)</td>
+          <td><input type="radio" name="habit_learn" value="yes"></td>
+          <td><input type="radio" name="habit_learn" value="no"></td>
+        </tr>
+        <tr>
+          <td>Going for a walk (10k steps)</td>
+          <td><input type="radio" name="habit_walk" value="yes"></td>
+          <td><input type="radio" name="habit_walk" value="no"></td>
+        </tr>
+        <tr>
+          <td>Relax your mind (Meditate 10 min)</td>
+          <td><input type="radio" name="habit_meditate" value="yes"></td>
+          <td><input type="radio" name="habit_meditate" value="no"></td>
+        </tr>
+        <tr>
+          <td>Ate Clean (No junk)</td>
+          <td><input type="radio" name="habit_meditate" value="yes"></td>
+          <td><input type="radio" name="habit_meditate" value="no"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" id="add-habit">+ Add</button>
+  </div>
+
+  <!-- Section: Tracker -->
+  <div class="section">
+    <h2>Tracker</h2>
+    <div class="tracker-list" id="tracker-list">
+      <div class="tracker-row">
+        <label>What is mobile screen time today?</label>
+        <input type="text" name="tracker_screentime" placeholder="comments">
+      </div>
+      <div class="tracker-row">
+        <label>How many steps have you walked today?</label>
+        <input type="text" name="tracker_steps" placeholder="comments">
+      </div>
+      <div class="tracker-row">
+        <label>What you learned today?</label>
+        <input type="text" name="tracker_learned" placeholder="comments">
+      </div>
+      <div class="tracker-row">
+        <label>How much sleep you had yesterday?</label>
+        <input type="text" name="tracker_sleep" placeholder="comments">
+      </div>
+      <div class="tracker-row">
+        <label>How many liters of water intake today?</label>
+        <input type="text" name="tracker_water" placeholder="comments">
+      </div>
+    </div>
+    <button type="button" id="add-tracker">+ Add</button>
+  </div>
+
+  <!-- Section: Reflections -->
+  <div class="section">
+    <h2>Reflections</h2>
+    <div class="reflection-row">
+      <label>→ Goods of day</label>
+      <textarea name="reflection_good" placeholder="What went well today?"></textarea>
+    </div>
+    <div class="reflection-row">
+      <label>→ Bads of day</label>
+      <textarea name="reflection_bad" placeholder="What didn't go well?"></textarea>
+    </div>
+    <div class="reflection-row">
+      <label>→ Improvements required</label>
+      <textarea name="reflection_improve" placeholder="What can you do better?"></textarea>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">Save Entry</button>
+
+</form>
+
+{% endblock %}

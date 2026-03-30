@@ -12,11 +12,14 @@
   <div class="app-shell">
 
     <!-- SIDEBAR -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
           <div class="sidebar-brand" id="brand-text">
             <i data-lucide="scroll-text"></i>
             My Journal
           </div>
+          <button class="sidebar-toggle" id="toggle-btn">
+            <i data-lucide="chevron-left" id="toggle-icon"></i>
+          </button>
       <nav class="sidebar-nav">
         <a href="/" class="nav-item">
           <i data-lucide="pen-line"> </i>
@@ -37,6 +40,7 @@
 
   </div>
 
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 <script>lucide.createIcons();</script>
 </body>
 </html>

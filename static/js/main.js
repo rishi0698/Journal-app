@@ -8,10 +8,10 @@ toggleBtn.addEventListener("click", function() {
   main.classList.toggle("collapsed");
 
   if (sidebar.classList.contains("collapsed")) {
-    toggleIcon.setAttribute("data-lucide", "chevrons-right");
+    toggleIcon.setAttribute("data-lucide", "panel-left-open");
   } else {
-    toggleIcon.setAttribute("data-lucide", "chevrons-left");
+    toggleIcon.setAttribute("data-lucide", "panel-left-close");
   }
-
+  
   lucide.createIcons();
 });

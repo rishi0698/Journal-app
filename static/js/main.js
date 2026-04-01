@@ -12,6 +12,6 @@ toggleBtn.addEventListener("click", function() {
   } else {
     toggleIcon.setAttribute("data-lucide", "panel-left-close");
   }
-  
+
   lucide.createIcons();
 });
